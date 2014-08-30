@@ -18,7 +18,7 @@ define(['jquery'], function ($) {
         $.mobile.phonegapNavigationEnabled = true;
 
         // Setting default transition 
-        //$.mobile.defaultPageTransition = 'slide';
+        $.mobile.defaultPageTransition = 'slide';
         //$.mobile.defaultDialogTransition = "none";
         
     /*

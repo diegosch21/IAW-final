@@ -5,9 +5,18 @@
     <title>Ingeniería de Aplicaciones Web - Final</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-        
+
+    <!-- FontAwesome - http://fortawesome.github.io/Font-Awesome/ -->
+    <link rel="stylesheet" href="css/font-awesome.min.css" />        
     <!-- Estilo jQuery Mobile -->
     <link rel="stylesheet" href="css/jquery.mobile-1.4.3.min.css"/>
+    <!-- nativeDroid core CSS -->
+    <link rel="stylesheet" href="css/jquerymobile.nativedroid.css" />
+    <!-- nativeDroid: Light/Dark -->
+    <link rel="stylesheet" href="css/jquerymobile.nativedroid.dark.css"  id='jQMnDTheme' />
+    <!-- nativeDroid: Color Schemes -->
+    <link rel="stylesheet" href="css/jquerymobile.nativedroid.color.green.css" id='jQMnDColor' />
+    
     <!-- Mi estilo -->
     <link rel="stylesheet" type="text/css" href="css/main.css"/>
 
@@ -15,27 +24,39 @@
     
 </head>
 <body>
-    <div data-role="page" id="index" data-theme="a">
-        <div data-theme="b" data-role="header">
-                HOLA
+    <div data-role="page" id="home" data-theme="b">
+        <div data-role="header" data-theme="b">
+            <h1>Header</h1>
         </div>
-                 
-        <div data-role="content" id="content">
-            QUÉ TAL
-        </div>
-        
-    </div>
-    
-    <div data-role="page" id="index" data-theme="a">
-        <div data-theme="b" data-role="header">
-                HOLA
-        </div>
-                 
-        <div data-role="content" id="content">
-            CHAU
-        </div>
-    </div>
+        <div data-role="content">
+            <p>Content goes here</p>
+            <a href="#page2" data-role="button" data-theme="c">Page2</a>
 
+        </div>
+        <div data-role="footer" data-theme="b">
+            <h4>Footer</h4>
+        </div>
+
+
+    </div>    
+    
+    <div data-role="page" id="page2" data-theme="a">
+        <div data-role="header" data-theme="b">
+            <h1>Header 2</h1>
+        </div>
+        <div data-role="content">
+            <p>Content goes here</p>
+            <a href="#" data-role="button" data-theme="a">Back</a>
+
+        </div>
+        <div data-role="footer" data-theme="b">
+            <h4>Footer</h4>
+        </div>
+
+
+    </div> 
+
+    
     
 </body>
 </html>
