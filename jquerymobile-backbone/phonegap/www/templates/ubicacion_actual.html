@@ -1,0 +1,57 @@
+<h1>Datos actuales</h1>
+<ul class='detail'>
+	<li class='estado'><img src='<%= icon %>'></img>
+		<span><%= condition %></span>
+	</li>
+	<li class="temp"><%= temp %>&deg;</li>
+	<li class='detalles'>
+		<span><i>Sensación: </i><%= st %>&deg;C</span>	
+	<% if(pp>0) { %>
+		<span><i>Precipitaciones: </i><%= pp %>mm</span>
+	<% } %>
+		<span><i>Humedad: </i><%= hmid %>%</span>
+		<span><i>Viento: </i>
+		<% if(wind_sp >0) { %>
+			<%= wind_sp %>km/h 
+			<%	
+				switch(wind_dir) { //INVERTIDOS 
+					case 'O', 'ONO', 'OSO':  %>
+       					<i class="wi wi-wind-east"></i>
+       				<%	break;
+       				case 'SO':  %>
+       					<i class="wi wi-wind-north-east"></i>
+       				<%	break;
+       				case 'SE':  %>
+       					<i class="wi wi-wind-north-west"></i>
+       				<%	break;
+       				case 'S','SSE','SSO':  %>
+       					<i class="wi wi-wind-north"></i>
+       				<%	break;
+       				case 'NO' :  %>
+       					<i class="wi wi-wind-south-east"></i>
+       				<%	break;
+       				case 'NE' :  %>
+       					<i class="wi wi-wind-south-west"></i>
+       				<%	break;
+       				case 'N','NNE','NNO':  %>
+       					<i class="wi wi-wind-south"></i>
+       				<%	break;
+       				case 'E', 'ENE', 'ESE': %>
+       					<i class="wi wi-wind-west"></i>			
+       				<%	break;
+       			}
+       		%>	
+		<% } else { %>
+			Calma
+		<% } %>
+		</span>
+		<span><i>Presión: </i><%= pres %>hPa</span>
+	</li>
+	<!-- <li class="temp hidden-sm hidden-xxs"><%= temp %>&deg;</li> -->
+	
+</ul>
+<div class="info">
+	<span>ESTACIÓN: <%= name %> - <%= province %>, <%= country %> </span>
+	<span class="update"><i>Últ actualización: </i><%= time %>, <%= date %> </span>
+	<span class="fuente"><i>Fuente: </i><%= institute %></span>
+</div>

@@ -1,0 +1,19 @@
+<h1>Pronóstico 5 días</h1>
+<ul class='week'>
+<%	for (i=0; i< dias.length;i++) { %>
+	<li>
+		<span><%= dias[i].dia %></span>
+		<img src="<%= dias[i].icon %>"></img>
+		<span class="pron_tempmax"><i class="wi wi-thermometer"></i><strong><%= dias[i].temp_max %>&deg;</strong></span>
+		<span class="pron_tempmin"><i class="wi wi-thermometer-exterior"></i><%= dias[i].temp_min %>&deg;</span>
+		<span class="pron_viento"><i class="wi wi-strong-wind"></i><%= dias[i].viento_vel %>km/h </span>
+		<span class="pron_nubes"><i class="wi wi-cloudy"></i><%= dias[i].nubosidad %>% </span>
+		<span class="pron_precip"><i class="wi wi-rain"></i><%= dias[i].precip %>mm</span>
+
+	</li>
+<% } %>
+</ul>
+<div class="info">
+	<span>ESTACIÓN: <%= name %></span>
+	<span class="update"><i>Últ actualización: </i><%= actualizado %></span>
+</div>

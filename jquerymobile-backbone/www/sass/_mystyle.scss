@@ -1,0 +1,110 @@
+.hidden-xxs {
+	@include media-only(xxs) { 
+		display:none !important;
+	}
+}
+.hidden-sm {
+	@include media-only(sm) { 
+		display:none !important;
+	}
+}
+.visible-xxs-inline-block, .visible-sm-inline-block {
+	display:none !important;
+}
+.visible-xxs-inline-block{	
+	@include media-only(xxs) { 
+		display:inline-block !important;
+	}
+}
+.visible-sm-inline-block { 
+	@include media-only(sm) { 
+		display:inline-block !important;
+	}
+}
+
+.ubicacion-title {
+	text-align: center;
+	margin: 10px;
+}
+
+.nativeDroidCards {
+	>li {
+		h1,h2 {
+			text-align: center;
+		}
+		
+	}
+	>li[data-cards-type="weather"] {
+		.detail {
+			margin-top: 1em;
+			li.estado {
+				width: 30%;
+				@include media-only(xxs) { 
+					width: 40%;
+				}
+				@include media-only(sm) { 
+					width: 40%;
+				}
+			}
+			li.temp {
+				width: 68%;
+				font-size: 6em;
+				@include media-only(xxs) { 
+					font-size: 4em;
+					width: 58%;
+				}
+				@include media-only(sm) { 
+					font-size: 5em;
+					width: 58%;
+				}
+			}
+			li.detalles {
+				width: 100%;
+				font-size: 1em;
+				>span {
+					display: inline-block;
+					margin-right: 0.5em;
+				}
+			}
+			
+		}
+		.info {
+			text-align: center;
+			padding-top: 1em;
+			>span {
+				display: inline-block;
+				margin-right: 1em;
+				font-size: 0.75em;
+			}
+		}
+		.week {
+			overflow-x: auto;
+			padding-top: 1em;
+			white-space: nowrap;
+			li {
+				width: 7em;
+				strong {
+					display: inline-block;
+				}
+			}
+			.pron_tempmax, .pron_tempmin {
+				font-size: 1.2em;
+			}
+			.pron_tempmin {
+				margin-bottom: .5em;
+			}
+			.pron_viento, .pron_nubes, .pron_precip {
+				font-size: 0.8em;
+			}
+			
+			span {
+				display: block;
+				i.wi {
+					display: inline-block;
+					margin-right: .5em;
+				}
+			}
+		}
+
+	}
+}
