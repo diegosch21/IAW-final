@@ -5,15 +5,16 @@ define([
     'models/Ubicacion'
 ], function($, _, Backbone, Ubicacion){
     var ubicaciones = Backbone.Collection.extend({
-        initialize: function(){
         
+        initialize: function(){
+            console.log("initialize collection");
         },
+
         model: Ubicacion,
 
-        //url: 
-
+        url: 'data/ubicaciones.json'
         
     });
-
-    return ubicaciones;
+    //SINGLETON
+    return new ubicaciones;
 });

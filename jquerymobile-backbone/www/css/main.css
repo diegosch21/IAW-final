@@ -27,6 +27,22 @@
   }
 }
 
+#page-home #ubicaciones-controles > li i.fa {
+  float: right;
+  font-size: 2em;
+}
+#page-home #ubicacion-agregar, #page-home #ubicacion-actual {
+  padding-left: 100px;
+}
+#page-home #ubicacion-agregar #boton-agregar, #page-home #ubicacion-agregar #boton-localizacion, #page-home #ubicacion-actual #boton-agregar, #page-home #ubicacion-actual #boton-localizacion {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 5em;
+  width: 5em;
+  padding: 1em;
+}
+
 .ubicacion-title {
   text-align: center;
   margin: 10px;

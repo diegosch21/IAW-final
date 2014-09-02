@@ -26,11 +26,81 @@
     
 </head>
 <body>
-    <div data-role="page" data-theme="b" id="page-init">
+
+    <div data-role="page" data-theme="b" id="page-home">
+        
+        <div data-role="panel" data-display="overlay" id="mypanel" data-theme="b">
+            <ul data-role="listview">
+                <li>Your wishes</li>
+                <li data-icon='false'><a href="#"><i class='lIcon fa fa-coffee'></i>Need a Coffee</a></li>
+                <li data-icon='false'><a href="#"><i class='lIcon fa fa-beer'></i>Have a Beer</a></li>
+                <li data-icon='false'><a href="#"><i class='lIcon fa fa-music'></i>Play Music</a></li>
+                <li data-icon='false'><a href="#"><i class='lIcon fa fa-fire'></i>Make a fire</a></li>
+                <li data-icon='false'><a href="#"><i class='lIcon fa fa-bullhorn'></i>Shout it loud</a></li>
+                <li data-icon='false'><a href="#"><i class='lIcon fa fa-heart'></i>Meet friends</a></li>
+                <li data-icon='false'><a href="#"><i class='lIcon fa fa-trophy'></i>Win a Trophy</a></li>
+            </ul>
+        </div>        
+
+
+        <div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme='b'>
+            <a href="#mypanel" data-role='button' data-inline='true'>
+                <i class='fa fa-bars'></i>
+            </a>
+            <h1>MeteoBahía</h1>
+        </div>  
+
+        <div data-role="content">
+            <h1 class="home-title">Seleccionar ubicación</h1>
+            
+            <ul id="ubicaciones-controles" data-role="listview" data-inset="false" data-icon="false" data-divider-theme="b">
+                <li data-role="list-divider">Ubicación actual <i class="fa fa-map-marker"></i></li>
+                    <li id="ubicacion-actual">
+                        <button class="ui-btn ui-shadow" id="boton-localizacion">
+                            <span class="fa fa-map-marker fa-3x"></span>
+                        </button> 
+                        <h2>ENCONTRAR LA UBICACIÓN MÁS CERCANA </h2>
+                        <p>Utiliza el servicio de geolocalización</p>
+                    </li>
+                <li data-role="list-divider">Ubicaciones vistas <i class="fa fa-star"></i></li>
+                    <li id="ubicacion-agregar">
+                        <button class="ui-btn ui-shadow" id="boton-agregar">
+                            <span class="fa fa-plus fa-3x"></span>
+                        </button>      
+                       <!--  <h2>AGREGAR UBICACIÓN:</h2> -->
+                        <select name="select-ubicaciones" id="select-ubicaciones" data-native-menu="true">
+                            <option>AGREGAR UBICACIÓN...</option>
+                            <optgroup label="Sudoeste bonaerense" id="optgroup-bahia">
+                                
+                            </optgroup>
+                            <optgroup label="Buenos Aires - Conurbano" id="optgroup-baires">
+                                
+                            </optgroup>
+                            <optgroup label="Costa atlántica" id="optgroup-costa">
+                                
+                            </optgroup>
+                            <optgroup label="Patagonia norte" id="optgroup-patagonia">
+                                
+                            </optgroup>
+                        </select>
+
+                    </li>
+            </ul>   
+                    
+            <ul id="ubicaciones-lista" data-role="listview" data-split-icon="delete" data-split-theme="b">
+
+            </ul>
+
+
+        </div>
+        
         
     </div>
-    <div data-role="page" data-theme="b" id="page-ubicacion-0">
-        
-    </div>
+
+
+
+
+
+
 </body>
 </html>

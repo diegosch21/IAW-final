@@ -5,9 +5,35 @@ define([
     'xml2json'
 ], function($, _, Backbone) {
 
+    var Ubicacion = Backbone.Model.extend({
+
+        id: "bb",
+        initialize: function() {
+            this.actual = new UbicacionActual({id: this.id});
+            this.pronostico = new UbicacionPronostico({id: this.id});
+        },
+        defaults: {
+            id: "def",
+            name: "",
+            city: "",
+            province: "",
+            country: "",
+            location: {
+                lat: "-",
+                lng: "-",
+                alt: "-"
+            },
+            temp: "",
+            icon: "",
+            condition: ""
+
+
+        }
+
+    });
+
     var UbicacionActual = Backbone.Model.extend({
 
-    	id: "bb", 
     	url: function() {
     		return "http://www.corsproxy.com/meteorologia.cerzos-conicet.gob.ar/mobile/xml/now-"+this.id+".xml";
     	},
@@ -48,8 +74,8 @@ define([
     	
     	parse: function(response) {
     		var parsed = $.xml2json(response);
-    		console.log("XML datos actuales:");
-    		console.log(parsed);
+    		//console.log("XML datos actuales:");
+    		//console.log(parsed);
     		var data = {
     			ubicacion_id: this.id,
 	        	name: parsed.Station.name,
@@ -84,7 +110,6 @@ define([
 
 	var UbicacionPronostico = Backbone.Model.extend({
 		
-		id: "bb",
 		url: function() {
     		return "http://www.corsproxy.com/meteorologia.cerzos-conicet.gob.ar/mobile/forecast/for-"+this.id+".xml";
     	},
@@ -98,7 +123,7 @@ define([
         	},
         	location: {
         		lat: "-",
-        		long: "-",
+        		lng: "-",
         		alt: "-"
         	},
         	dias:
@@ -131,8 +156,8 @@ define([
 
     	parse: function(response) {
     		var parsed = $.xml2json(response);
-    		console.log("XML pronostico:");
-    		console.log(parsed);
+    		//console.log("XML pronostico:");
+    		//console.log(parsed);
     	 	data = {
     	 	   	ubicacion_id: this.id,
         		name: parsed.forecast.tabular.station.name,
@@ -164,11 +189,13 @@ define([
         	return data;
         }
         	
-    		
 	});
-    return { 
-    	actual: UbicacionActual,
-    	pronostico: UbicacionPronostico 
-    }
+    
+    return Ubicacion;
+
+    // return { 
+    // 	actual: UbicacionActual,
+    // 	pronostico: UbicacionPronostico 
+    // }
 
 });

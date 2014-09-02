@@ -22,6 +22,29 @@
 	}
 }
 
+#page-home {
+	#ubicaciones-controles {
+		>li {
+			i.fa {
+				float: right;
+				font-size: 2em;
+			}
+		}
+	}
+	#ubicacion-agregar, #ubicacion-actual {
+		padding-left: 100px;
+		#boton-agregar, #boton-localizacion {
+			position: absolute;
+			left: 0;
+			top: 0;
+			height: 5em;
+			width: 5em;
+			padding: 1em;
+		}
+	}
+}
+
+
 .ubicacion-title {
 	text-align: center;
 	margin: 10px;

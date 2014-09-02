@@ -1,0 +1,242 @@
+[	
+	{
+		"id": "bb",
+		"name": "Bahía Blanca (CONICET)",
+		"city": "Bahía Blanca - CONICET",
+		"province": "Buenos Aires",
+		"location": {
+			"lat": -38.667049,
+			"lng": -62.233711,
+			"alt": 57
+		},
+		"region": "sudoeste_bonaerense"
+	},
+	{
+		"id": "bb2",
+		"name": "Bahía Blanca (Espora)",
+		"city": "Bahía Blanca - Com. Espora",
+		"province": "Buenos Aires",
+		"location": {
+			"lat": -38.714749,
+			"lng": -62.163059,
+			"alt": 83
+		},
+		"region": "sudoeste_bonaerense"
+	},
+	{
+		"id": "bb8",
+		"name": "Bahía Blanca (Villa Mitre)",
+		"city": "Bahía Blanca - Villa Mitre",
+		"province": "Buenos Aires",
+		"location": {
+			"lat": -38.725929,
+			"lng": -62.241501,
+			"alt": 22
+		},
+		"region": "sudoeste_bonaerense"
+	},
+	{
+		"id": "cd",
+		"name": "Cnel. Dorrego",
+		"city": "Coronel Dorrego",
+		"province": "Buenos Aires",
+		"location": {
+			"lat": -38.75,
+			"lng": -61.25,
+			"alt": 103
+		},
+		"region": "sudoeste_bonaerense"
+	},
+	{
+		"id": "cp",
+		"name": "Cnel. Pringles",
+		"city": "Coronel Pringles",
+		"province": "Buenos Aires",
+		"location": {
+			"lat": -37.7416992188,
+			"lng": -61.5253982544,
+			"alt": 252
+		},
+		"region": "sudoeste_bonaerense"
+	},
+	{
+		"id": "ctm",
+		"name": "Cristiano Muerto",
+		"city": "Cristiano Muerto",
+		"province": "Buenos Aires",
+		"location": {
+			"lat": -38.690057,
+			"lng": -59.470024,
+			"alt": 20
+		},
+		"region": "sudoeste_bonaerense"
+	},
+	{
+		"id": "ha",
+		"name": "Hilario Ascasubi",
+		"city": "Hilario Ascasubi",
+		"province": "Buenos Aires",
+		"location": {
+			"lat": -39.3833007812,
+			"lng": -62.6166000366,
+			"alt": 25
+		},
+		"region": "sudoeste_bonaerense"
+	},
+	{
+		"id": "blc",
+		"name": "La Chiquita",
+		"city": "Balneario La Chiquita (Villarino)",
+		"province": "Buenos Aires",
+		"location": {
+			"lat": -39.588658,
+			"lng": -62.10293,
+			"alt": 8
+		},
+		"region": "sudoeste_bonaerense"
+	},
+	{
+		"id": "pl",
+		"name": "Pedro Luro",
+		"city": "Pedro Luro",
+		"province": "Buenos Aires",
+		"location": {
+			"lat": -39.472161,
+			"lng": -62.692091,
+			"alt": 25
+		},
+		"region": "sudoeste_bonaerense"
+	},
+	{
+		"id": "pa2",
+		"name": "Punta Alta (Pt. Belgrano)",
+		"city": "Punta Alta - Puerto Belgrano",
+		"province": "Buenos Aires",
+		"location": {
+			"lat": -38.886757,
+			"lng": -62.108486,
+			"alt": 5
+		},
+		"region": "sudoeste_bonaerense"
+	},
+	{
+		"id": "ta",
+		"name": "Tres Arroyos (Centro)",
+		"city": "Tres Arroyos",
+		"province": "Buenos Aires",
+		"location": {
+			"lat": -38.378223,
+			"lng": -60.276321,
+			"alt": 121.92
+		},
+		"region": "sudoeste_bonaerense"
+	},
+	{
+		"id": "ba",
+		"name": "Aeroparque (Bs As)",
+		"city": "Buenos Aires - Aeroparque",
+		"province": "CABA",
+		"location": {
+			"lat": -34.5592,
+			"lng": -58.4156,
+			"alt": 6
+		},
+		"region": "conurbano_bonaerense"	
+	},
+	{
+		"id": "ba21",
+		"name": "Avellaneda",
+		"city": "Avellaneda",
+		"province": "Buenos Aires",
+		"location": {
+			"lat": -34.665592,
+			"lng": -58.364624,
+			"alt": 14.0208
+		},
+		"region": "conurbano_bonaerense"	
+	},
+	{
+		"id": "ca",
+		"name": "Castelar",
+		"city": "Castelar",
+		"province": "Buenos Aires",
+		"location": {
+			"lat": -34.649723,
+			"lng": -58.660831,
+			"alt": 36.576
+		},
+		"region": "conurbano_bonaerense"
+	},
+	{
+		"id": "ba20",
+		"name": "Berazategui",
+		"city": "Berazategui",
+		"province": "Buenos Aires",
+		"location": {
+			"lat": -34.744202,
+			"lng": -58.20623,
+			"alt": 7.3152
+		},
+		"region": "conurbano_bonaerense"	
+	},
+	{
+		"id": "ba2",
+		"name": "Ciudad Universitaria (Bs As)",
+		"city": "Buenos Aires - Ciudad Universitaria",
+		"province": "CABA",
+		"location": {
+			"lat": -34.5419,
+			"lng": -58.441,
+			"alt": 9
+		},
+		"region": "conurbano_bonaerense"
+	},
+	{
+		"id": "ba6",
+		"name": "Congreso",
+		"city": "Buenos Aires - Congreso",
+		"province": "CABA",
+		"location": {
+			"lat": -34.63279,
+			"lng": -58.447788,
+			"alt": 31.0896
+		},
+		"region": "conurbano_bonaerense"
+	},
+	{
+		"id": "lp",
+		"name": "La Plata",
+		"city": "La Plata",
+		"province": "Buenos Aires",
+		"location": {
+			"lat": -34.903362,
+			"lng": -57.937832,
+			"alt": 15.8496
+		},
+		"region": "conurbano_bonaerense"
+	},
+	{
+		"id": "ba15",
+		"name": "Moreno",
+		"city": "Moreno",
+		"province": "Buenos Aires",
+		"location": {
+			"lat": -34.644314,
+			"lng": -58.793884,
+			"alt": 18.8976
+		},
+		"region": "conurbano_bonaerense"
+	},
+	{
+		"id": "ba11",
+		"name": "Olivos",
+		"city": "Olivos",
+		"province": "Buenos Aires",
+		"location": {
+			"lat": -34.511,
+			"lng": -58.511,
+			"alt": 10
+		},
+		"region": "conurbano_bonaerense"
+	}
+]
