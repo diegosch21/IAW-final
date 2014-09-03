@@ -25,7 +25,8 @@ define([
             },
             temp: "",
             icon: "",
-            condition: ""
+            condition: "",
+            time: ""
 
 
         }
@@ -36,28 +37,29 @@ define([
 
     	url: function() {
     		return "http://www.corsproxy.com/meteorologia.cerzos-conicet.gob.ar/mobile/xml/now-"+this.id+".xml";
+            //return "http://meteorologia.cerzos-conicet.gob.ar/mobile/xml/now-"+this.id+".xml";
     	},
     	
         defaults: {
         	ubicacion_id: "def",
         	name: "default",
-        	city: "-",
-        	province: "-",
-        	country: "-",
+        	city: "",
+        	province: "",
+        	country: "",
             location: {
                 lat: 0,
                 lng: 0, 
                 alt: 0
             },
-        	temp: 0,
-        	icon: "http://www.meteorologia.cerzos-conicet.gov.ar/mobile/iconos/1.png" ,
+        	temp: "",
+        	icon: "" ,
         	condition: "-",
-        	st: 0,
-        	pp: 0,
-        	hmid: 0,
-        	wind_sp: 0,
-        	wind_dir: "-",
-        	pres: 0,
+        	st: "",
+        	pp: "",
+        	hmid: "",
+        	wind_sp: "",
+        	wind_dir: "",
+        	pres: "",
         	time: "00:00",
         	date: "1/1/2014",
         	institute: "default"
@@ -112,6 +114,7 @@ define([
 		
 		url: function() {
     		return "http://www.corsproxy.com/meteorologia.cerzos-conicet.gob.ar/mobile/forecast/for-"+this.id+".xml";
+            //return "http://meteorologia.cerzos-conicet.gob.ar/mobile/forecast/for-"+this.id+".xml";
     	},
         defaults: {
         	ubicacion_id: "def",
@@ -122,17 +125,17 @@ define([
         		pone: "00:00"
         	},
         	location: {
-        		lat: "-",
-        		lng: "-",
-        		alt: "-"
+        		lat: 0,
+        		lng: 0,
+        		alt: 0
         	},
         	dias:
         	[
         		{
         			dia: 0,
         			fecha: "01/01/2000",
-        			icon: "http://www.meteorologia.cerzos-conicet.gov.ar/mobile/iconos/1.png",
-        			descrip: "-",
+        			icon: "",
+        			descrip: "",
         			temp_max: 0,
         			temp_min: 0,
         			nubosidad: 0,

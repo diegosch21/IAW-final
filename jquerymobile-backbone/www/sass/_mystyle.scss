@@ -22,24 +22,84 @@
 	}
 }
 
+.panel-lateral {
+	padding-top: 3em;
+	padding-left: 0.5em;
+	a, span {
+		color: #FFFFFF !important;
+		display: block;
+		margin: -1em 0;
+		padding: 1em 1em;
+		text-shadow:  1px 1px 1px rgba(0,0,0,0.2);
+		i {
+			position: absolute;
+			right: 16px;
+			padding-top: 0.2em;
+		}
+	}
+
+	
+}
+
+.page-loading {
+    display:    none;
+    position:   fixed;
+    z-index:    1000;
+    top:        0;
+    left:       0;
+    height:     100%;
+    width:      100%;
+    background: rgba( 255, 255, 255, .8 ) 
+                url('images/ajax-loader.gif') 
+                50% 50% 
+                no-repeat;
+}
+
+body.loading {
+    overflow: hidden;   
+}
+body.loading .page-loading {
+    display: block;
+}
+
 #page-home {
-	#ubicaciones-controles {
-		>li {
+	ul  {
+		>li[data-role="list-divider"] {
 			i.fa {
 				float: right;
 				font-size: 2em;
 			}
 		}
 	}
-	#ubicacion-agregar, #ubicacion-actual {
+	
+	#ubicacion-agregar, #ubicacion-encontrar {
+		border-bottom: 2px solid rgba(255,255,255,0.1);
 		padding-left: 100px;
-		#boton-agregar, #boton-localizacion {
-			position: absolute;
-			left: 0;
-			top: 0;
-			height: 5em;
-			width: 5em;
-			padding: 1em;
+		
+	}
+	#boton-localizacion, #loading-localizacion, .loading-ubicacion-item, #boton-actualizar-ubicaciones {
+		position: absolute;
+		left: 0;
+		top: 0;
+		height: 5em;
+		width: 5em;
+		padding: 1em;
+	}
+	
+	.item-img {
+		position: absolute;
+		left: 0;
+		top: 0;
+		height: 4em;
+		width: 4em;
+		padding: 0.5em;
+		
+	}
+	#ubicacion-actual {
+		//display: none;
+		#ubicacion-actual-link {
+			padding-top: 0;
+			padding-bottom: 0;
 		}
 	}
 }
@@ -130,4 +190,16 @@
 		}
 
 	}
+}
+
+#map {
+	position: relative;
+	
+}
+
+#map_canvas {
+	width: 90%;
+	height: 300px;
+	margin: 0 auto;
+
 }

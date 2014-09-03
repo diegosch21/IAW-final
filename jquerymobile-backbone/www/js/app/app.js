@@ -4,13 +4,18 @@ define([
 	'views/Home',
 	'views/UbicacionPage',
 	'collections/Ubicaciones'
-], function ($, Backbone, HomeView,UbicacionView,UbicacionesCollection) {
+], function ($, Backbone, HomeView,UbicacionView,Ubicaciones) {
 	
 	function init() {
 		/* Document ready */
 		$(function() {
 			eventHandlersGenerales();
+			Ubicaciones.fetch({
+				success: HomeView.llenarSelect
+			})
+			HomeView.cargar();
 		});
+		
 		/* Device ready (Phonegap) */
 		document.addEventListener("deviceready", onDeviceReady, false);
 
@@ -36,7 +41,6 @@ define([
 		},
 
 		initialize: function(){
-
 			this.homeView = HomeView;
 		},
 		home: function() {

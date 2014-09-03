@@ -27,20 +27,69 @@
   }
 }
 
-#page-home #ubicaciones-controles > li i.fa {
+.panel-lateral {
+  padding-top: 3em;
+  padding-left: 0.5em;
+}
+.panel-lateral a, .panel-lateral span {
+  color: #FFFFFF !important;
+  display: block;
+  margin: -1em 0;
+  padding: 1em 1em;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+.panel-lateral a i, .panel-lateral span i {
+  position: absolute;
+  right: 16px;
+  padding-top: 0.2em;
+}
+
+.page-loading {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.8) url("images/ajax-loader.gif") 50% 50% no-repeat;
+}
+
+body.loading {
+  overflow: hidden;
+}
+
+body.loading .page-loading {
+  display: block;
+}
+
+#page-home ul > li[data-role="list-divider"] i.fa {
   float: right;
   font-size: 2em;
 }
-#page-home #ubicacion-agregar, #page-home #ubicacion-actual {
+#page-home #ubicacion-agregar, #page-home #ubicacion-encontrar {
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
   padding-left: 100px;
 }
-#page-home #ubicacion-agregar #boton-agregar, #page-home #ubicacion-agregar #boton-localizacion, #page-home #ubicacion-actual #boton-agregar, #page-home #ubicacion-actual #boton-localizacion {
+#page-home #boton-localizacion, #page-home #loading-localizacion, #page-home .loading-ubicacion-item, #page-home #boton-actualizar-ubicaciones {
   position: absolute;
   left: 0;
   top: 0;
   height: 5em;
   width: 5em;
   padding: 1em;
+}
+#page-home .item-img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 4em;
+  width: 4em;
+  padding: 0.5em;
+}
+#page-home #ubicacion-actual #ubicacion-actual-link {
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 .ubicacion-title {
@@ -126,4 +175,14 @@
 .nativeDroidCards > li[data-cards-type="weather"] .week span i.wi {
   display: inline-block;
   margin-right: .5em;
+}
+
+#map {
+  position: relative;
+}
+
+#map_canvas {
+  width: 90%;
+  height: 300px;
+  margin: 0 auto;
 }

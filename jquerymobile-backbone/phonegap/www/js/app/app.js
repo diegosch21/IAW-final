@@ -1,14 +1,21 @@
 define([
 	'jquery',
 	'backbone',
-	'views/Ubicacion'
-], function ($, Backbone, UbicacionView, UbicacionModel) {
+	'views/Home',
+	'views/UbicacionPage',
+	'collections/Ubicaciones'
+], function ($, Backbone, HomeView,UbicacionView,Ubicaciones) {
 	
 	function init() {
 		/* Document ready */
 		$(function() {
 			eventHandlersGenerales();
+			Ubicaciones.fetch({
+				success: HomeView.llenarSelect
+			})
+			HomeView.cargar();
 		});
+		
 		/* Device ready (Phonegap) */
 		document.addEventListener("deviceready", onDeviceReady, false);
 
@@ -22,34 +29,57 @@ define([
 	}
 	function eventHandlersGenerales() {
 		console.log("document ready");
+
+
 	}
 
 	var appRouter = Backbone.Router.extend({
 
 		routes: {
-			
+			"": "home",
+			"ubicacion/:id" : "ubicacion"
 		},
 
 		initialize: function(){
-			//this.ubicacionModel = new UbicacionModel(); 
-			this.ubicacionView = new UbicacionView({el: "#page-ubicacion-0", id: "bb", firstPage: true});
-			//this.ubicacionModel.on('reset',, this);
-
-			//this.cambiarPagina(this.ubicacionView);
-
-        	//$('#header').html(this.headerView.el);
-        	//this.cambiarPagina = _.bind(cambiarPagina,this);        	
-        	//this.getLabos = _.bind(getLabos,this);
+			this.homeView = HomeView;
+		},
+		home: function() {
+			this.homeView.render();
 		},
 
-		home: function(){
+		ubicacion: function(id){
+			if(!this.ubicaciones[id]){
+				var el = this.nuevaPagina(id);
+				this.ubicaciones[id] = new UbicacionView({el: el, id: id});	
+			}
+			else {
+				this.ubicaciones[id].update();
+			}
+
 			//$.mobile.changePage( "#" , { reverse: false, changeHash: false } );
 			//var self = this;
 			//require(['views/Home'], function(HomeView) {
 			//	self.cambiarPagina(new HomeView(),'inicio');	
 			//});
-		}
+		},
 
+		ubicaciones: {},
+
+		nuevaPagina: function(id) {
+			var el = $('<div data-role="page" data-theme="b" id="page-ubicacion-'+id+'"></div>');
+			//$('body').append(el);
+			el.appendTo( $.mobile.pageContainer );
+			return el;
+		},
+		// cambiarPagina: function(view) {
+		// 	var transition = $.mobile.defaultPageTransition;
+		//    // We don't want to slide the first page
+		//     if (this.firstPage) {
+		//         transition = 'none';
+		//         this.firstPage = false;
+		//     }
+		//     $.mobile.changePage(view.render().$el, {changeHash:false, transition: transition});
+		// }
 		// cambiarPagina :function (page) {
 		//     $(page.el).attr('data-role', 'page');
 		//     $(page.el).attr('data-theme', 'b');

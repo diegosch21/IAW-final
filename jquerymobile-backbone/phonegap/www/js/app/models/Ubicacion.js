@@ -5,33 +5,61 @@ define([
     'xml2json'
 ], function($, _, Backbone) {
 
+    var Ubicacion = Backbone.Model.extend({
+
+        id: "bb",
+        initialize: function() {
+            this.actual = new UbicacionActual({id: this.id});
+            this.pronostico = new UbicacionPronostico({id: this.id});
+        },
+        defaults: {
+            id: "def",
+            name: "",
+            city: "",
+            province: "",
+            country: "",
+            location: {
+                lat: "-",
+                lng: "-",
+                alt: "-"
+            },
+            temp: "",
+            icon: "",
+            condition: "",
+            time: ""
+
+
+        }
+
+    });
+
     var UbicacionActual = Backbone.Model.extend({
 
-    	id: "bb", 
     	url: function() {
-    		return "http://www.corsproxy.com/meteorologia.cerzos-conicet.gob.ar/mobile/xml/now-"+this.id+".xml";
+    		//return "http://www.corsproxy.com/meteorologia.cerzos-conicet.gob.ar/mobile/xml/now-"+this.id+".xml";
+            return "http://meteorologia.cerzos-conicet.gob.ar/mobile/xml/now-"+this.id+".xml";
     	},
     	
         defaults: {
         	ubicacion_id: "def",
         	name: "default",
-        	city: "-",
-        	province: "-",
-        	country: "-",
+        	city: "",
+        	province: "",
+        	country: "",
             location: {
                 lat: 0,
                 lng: 0, 
                 alt: 0
             },
-        	temp: 0,
-        	icon: "http://www.meteorologia.cerzos-conicet.gov.ar/mobile/iconos/1.png" ,
+        	temp: "",
+        	icon: "" ,
         	condition: "-",
-        	st: 0,
-        	pp: 0,
-        	hmid: 0,
-        	wind_sp: 0,
-        	wind_dir: "-",
-        	pres: 0,
+        	st: "",
+        	pp: "",
+        	hmid: "",
+        	wind_sp: "",
+        	wind_dir: "",
+        	pres: "",
         	time: "00:00",
         	date: "1/1/2014",
         	institute: "default"
@@ -48,8 +76,8 @@ define([
     	
     	parse: function(response) {
     		var parsed = $.xml2json(response);
-    		console.log("XML datos actuales:");
-    		console.log(parsed);
+    		//console.log("XML datos actuales:");
+    		//console.log(parsed);
     		var data = {
     			ubicacion_id: this.id,
 	        	name: parsed.Station.name,
@@ -84,9 +112,9 @@ define([
 
 	var UbicacionPronostico = Backbone.Model.extend({
 		
-		id: "bb",
 		url: function() {
-    		return "http://www.corsproxy.com/meteorologia.cerzos-conicet.gob.ar/mobile/forecast/for-"+this.id+".xml";
+    		//return "http://www.corsproxy.com/meteorologia.cerzos-conicet.gob.ar/mobile/forecast/for-"+this.id+".xml";
+            return "http://meteorologia.cerzos-conicet.gob.ar/mobile/forecast/for-"+this.id+".xml";
     	},
         defaults: {
         	ubicacion_id: "def",
@@ -97,17 +125,17 @@ define([
         		pone: "00:00"
         	},
         	location: {
-        		lat: "-",
-        		long: "-",
-        		alt: "-"
+        		lat: 0,
+        		lng: 0,
+        		alt: 0
         	},
         	dias:
         	[
         		{
         			dia: 0,
         			fecha: "01/01/2000",
-        			icon: "http://www.meteorologia.cerzos-conicet.gov.ar/mobile/iconos/1.png",
-        			descrip: "-",
+        			icon: "",
+        			descrip: "",
         			temp_max: 0,
         			temp_min: 0,
         			nubosidad: 0,
@@ -131,8 +159,8 @@ define([
 
     	parse: function(response) {
     		var parsed = $.xml2json(response);
-    		console.log("XML pronostico:");
-    		console.log(parsed);
+    		//console.log("XML pronostico:");
+    		//console.log(parsed);
     	 	data = {
     	 	   	ubicacion_id: this.id,
         		name: parsed.forecast.tabular.station.name,
@@ -164,11 +192,13 @@ define([
         	return data;
         }
         	
-    		
 	});
-    return { 
-    	actual: UbicacionActual,
-    	pronostico: UbicacionPronostico 
-    }
+    
+    return Ubicacion;
+
+    // return { 
+    // 	actual: UbicacionActual,
+    // 	pronostico: UbicacionPronostico 
+    // }
 
 });
