@@ -117,7 +117,7 @@ Entrega para el final de la materia Ingeniería de Aplicaciones Web (previa al P
     - CLI Apache Cordova
 
 	
-## Estructura del proyecto ##	
+## Estructura del proyecto ##
   * **/phonegap**: cordova app
     * /platforms: aquí van las aplicaciones compiladas para cada plataforma
     * /plugins: plugins instalados para esta aplicación
@@ -143,7 +143,7 @@ Entrega para el final de la materia Ingeniería de Aplicaciones Web (previa al P
     * /templates: htmls correspondientes a las vistas
     - index.html: single page: "entry-point" de la aplicación     
 
-# ANÁLISIS Y CONCLUSIONES  #    
+# ANÁLISIS Y CONCLUSIONES #
 
 ### Perfomance ###
 
