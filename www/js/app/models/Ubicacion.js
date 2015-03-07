@@ -36,7 +36,7 @@ define([
     var UbicacionActual = Backbone.Model.extend({
 
     	url: function() {
-    		return "http://www.corsproxy.com/meteorologia.cerzos-conicet.gob.ar/mobile/xml/now-"+this.id+".xml";
+    		return "proxy_datosactuales.php?id="+this.id;
             //return "http://meteorologia.cerzos-conicet.gob.ar/mobile/xml/now-"+this.id+".xml";
     	},
     	
@@ -103,6 +103,8 @@ define([
 	    	}
             if(parsed.cc.dir.img)
                 data.icon = parsed.cc.dir.img.src;
+            else if(parsed.cc.icon && parsed.cc.dir)
+                data.icon = parsed.cc.dir+parsed.cc.icon+".png";
             else
                 data.icon = "";
             return data;
@@ -113,7 +115,7 @@ define([
 	var UbicacionPronostico = Backbone.Model.extend({
 		
 		url: function() {
-    		return "http://www.corsproxy.com/meteorologia.cerzos-conicet.gob.ar/mobile/forecast/for-"+this.id+".xml";
+    		return "proxy_pronostico.php?id="+this.id;
             //return "http://meteorologia.cerzos-conicet.gob.ar/mobile/forecast/for-"+this.id+".xml";
     	},
         defaults: {
