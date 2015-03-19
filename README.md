@@ -7,7 +7,7 @@ Entrega para el final de la materia Ingeniería de Aplicaciones Web (previa al P
 * **JQueryMobile + tema NativeDroid - Backbone.js - Require.js**
 * Datos desde XML 
 
-------------------------------------------
+--------------------------------------------
 # DESCRIPCIÓN #
 
 ## Objetivos de la aplicación - Características implementadas ##
